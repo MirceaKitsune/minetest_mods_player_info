@@ -46,7 +46,7 @@ minetest.register_chatcommand("players", {
 	privs = {},
 	func = function(name, param)
 		if minetest.is_singleplayer() then
-			print("This command only works in multiplayer.")
+			minetest.chat_send_player(name, "This command only works in multiplayer.")
 		else
 			minetest.show_formspec(name, "playerinfo", formspec_string(name))
 		end
